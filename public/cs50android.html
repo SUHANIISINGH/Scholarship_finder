@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CS50 Android</title>
+ <style>
+   .thumbnail-container{
+      margin-top:100px;
+        display:flex;
+        max-width: 100%;
+    }
+   .thumbnail-container img {
+    
+      height: 400px;
+
+      border-radius: 10px;
+      transition: height 0.3s ease-in-out;
+    }
+
+    .thumbnail-container img:hover {
+      height: 420px;
+    }
+    .thumbnail{
+      border:6px solid white;
+      
+    }
+ </style>
+</head>
+<body onload="getThumbnail('course1', 'thumbnailImage1'),getThumbnail('course2', 'thumbnailImage2'),getThumbnail('course3', 'thumbnailImage3'),getThumbnail('course4', 'thumbnailImage4'),getThumbnail('course5', 'thumbnailImage5'),getThumbnail('course6', 'thumbnailImage6'),getThumbnail('course7', 'thumbnailImage7')">
+  <h2 style="text-align:center;font-family: sans-serif;font-size:50px;position:fixed;top:2px;">CS50-Android</h2>
+  <section class="thumbnail-section">
+    
+    <div class="thumbnail-container">
+      <div class="thumbnail">
+      <p id="course1" style="color:white;">https://www.youtube.com/watch?v=acqZaszVZH4&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=1&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=acqZaszVZH4&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=1&pp=iAQB"><img id="thumbnailImage1" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Introduction</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course2" style="color:white;">https://www.youtube.com/watch?v=oi4U6_-yrCs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=2&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=oi4U6_-yrCs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=2&pp=iAQB"><img id="thumbnailImage2" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50 Tracks 2019 - Android - Lesson 1</p>
+      </div>
+      <div class="thumbnail">
+
+      <p id="course3" style="color:white;">https://www.youtube.com/watch?v=gTy13ioTddg&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=3&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=gTy13ioTddg&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=3&pp=iAQB"><img id="thumbnailImage3" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50 Tracks 2019 - Android - Lesson 2</p>
+      </div>
+      <div class="thumbnail">
+
+      <p id="course4" style="color:white;">https://www.youtube.com/watch?v=OJQ8Cse6-Ss&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=4&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=OJQ8Cse6-Ss&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=4&pp=iAQB"><img id="thumbnailImage4" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50 Tracks 2019 - Android - Lesson 3</p>
+      
+      </div>
+      <div class="thumbnail"><p id="course5" style="color:white;">https://www.youtube.com/watch?v=pmmKvPlPIDs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=5&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=pmmKvPlPIDs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=5&pp=iAQB"><img id="thumbnailImage5" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50 Tracks 2019 - Android - Lesson 4</p>
+      </div>
+      <div class="thumbnail"><p id="course6" style="color:white;">https://www.youtube.com/watch?v=3WmSmNTs70U&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=7&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=3WmSmNTs70U&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=7&pp=iAQB"><img id="thumbnailImage6" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50 Tracks 2019 - Android - Lesson 5</p>
+      </div><div class="thumbnail"> <p id="course7" style="color:white;">https://www.youtube.com/watch?v=oi4U6_-yrCs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=7&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=oi4U6_-yrCs&list=PLhQjrBD2T381qULidYDKP55-4u1piASC1&index=7&pp=iAQB"><img id="thumbnailImage7" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Conclusion</p>
+      
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    function getThumbnail(id, id1) {
+      var youtubeLink = document.getElementById(id).textContent;
+      var videoId = extractVideoId(youtubeLink);
+
+      if (videoId) {
+        var thumbnailUrl = 'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg';
+        document.getElementById(id1).src = thumbnailUrl;
+      }
+    }
+
+    function extractVideoId(url) {
+      var match = url.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^?&]+)/i);
+      return match ? match[1] : null;
+    }
+  </script>
+</body>
+</html>

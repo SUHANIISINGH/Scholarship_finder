@@ -1,0 +1,69 @@
+<html>
+<head><title>page5</title>
+  <style>
+    .tweet-container {
+      width: 450px;
+      height: 100px; 
+      margin-left: 30px;
+
+    }
+    
+  .tweet-grid{
+    display:flex;
+    margin-bottom: 850px;
+  }
+  </style>  
+</head>
+<body style="background-color: rgb(112,207,114);">
+    <input type="text" id="keywordInput" placeholder="Enter keyword">
+  <button id="filterButton">Filter</button>
+  <div class="tweet-grid">
+    <div class="tweet-container">
+      <
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr" class = "twitter-tweet-text">2023 Australian Government Research Training Program For International Students<br><br>Apply link↙️ <a href="https://t.co/5c8bsZYcuJ">https://t.co/5c8bsZYcuJ</a><br><br>Host Country: Australia<br><br>Study Level:<br>• Masters degree<br>• PhD<br><br>Eligible: All Countries<br><br>Benefits:<br>✅Full Scholarship<br>✅AUD $28,854<br><br>Deadline: September 30, 2023 <a href="https://t.co/VxNf3vytOr">pic.twitter.com/VxNf3vytOr</a></p>&mdash; Scholarship Region (@scholarsregion) <a href="https://twitter.com/scholarsregion/status/1663457093582503936?ref_src=twsrc%5Etfw">May 30, 2023</a></blockquote></div> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+
+<div class="tweet-container">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr" class = "twitter-tweet-text">Study-In-UK: 2023 University of Manchester Engineering the Future Scholarships for African Students<br><br>Host: UK<br><br>Study Level:<br>• Masters Scholarships<br><br>Eligible: All African Countries<br><br>Benefits:<br>✅Tuition fee waiver<br>✅£33,500<br><br>Deadline: July 13, 2023<br><br>APPLY↙️<a href="https://t.co/oTVSQA9oYy">https://t.co/oTVSQA9oYy</a></p>&mdash; Scholarship Region (@scholarsregion) <a href="https://twitter.com/scholarsregion/status/1663500512828743681?ref_src=twsrc%5Etfw">May 30, 2023</a></blockquote></div> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="tweet-container">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">2023 Stanford University Knight-Hennessy Scholars For International Student<br><br>Apply Link↙️<a href="https://t.co/Mlg28JD3n7">https://t.co/Mlg28JD3n7</a><br><br>Host: USA<br><br>Study Level: <br>•Master degree<br>•PhD degree<br>•Fellowship<br><br>Eligible: All Countries<br><br>Benefit: <br>✅Full Scholarship<br>✅Monthly Stipend<br><br>Deadline: Not Specified <a href="https://t.co/d8YJf7EhfN">pic.twitter.com/d8YJf7EhfN</a></p>&mdash; Scholarship Region (@scholarsregion) <a href="https://twitter.com/scholarsregion/status/1663251358760173568?ref_src=twsrc%5Etfw">May 29, 2023</a></blockquote></div> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div class="tweet-grid">
+<div class="tweet-container">
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr" class = "twitter-tweet-text">2023 University of Waikato Excellence Scholarships for International Students<br><br>Host Country: New Zealand <br> <br>Study Level: <br>• Bachelors degree <br>• Masters degree <br><br>Eligible: All Countries <br><br>Benefit: <br>✅NZD$15,000<br><br>Deadline: Not Specified <br><br>APPLY↙️<a href="https://t.co/mVC1vn9eav">https://t.co/mVC1vn9eav</a></p>&mdash; Scholarship Region (@scholarsregion) <a href="https://twitter.com/scholarsregion/status/1663266458980478976?ref_src=twsrc%5Etfw">May 29, 2023</a></blockquote> </div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr" class = "twitter-tweet-text">National Scholarship Portal (NSP)<br><br>It&#39;s an online platform by govt that provides easy access to various scholarships for students across the country.<br><br>Visit the NSP website (<a href="https://t.co/08FPYmxsA6">https://t.co/08FPYmxsA6</a>) and to know more, register for a scholarship and avail the benefits<br><br>Pls RT 🔁 <a href="https://t.co/xj1KlxVLVN">pic.twitter.com/xj1KlxVLVN</a></p>&mdash; NebulaWorld (@nebula_world) <a href="https://twitter.com/nebula_world/status/1663414169696362497?ref_src=twsrc%5Etfw">May 30, 2023</a></blockquote> </div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</div>
+<script>
+document.getElementById('filterButton').addEventListener('click', filterTweets);
+
+function filterTweets() {
+  var keyword = document.getElementById('keywordInput').value.toLowerCase();
+  var tweets = document.getElementsByClassName('twitter-tweet');
+
+  for (var i = 0; i < tweets.length; i++) {
+    var tweet = tweets[i];
+    var tweetText = tweet.getAttribute('data-text').toLowerCase();
+
+    if (tweetText.includes(keyword)) {
+      tweet.style.display = 'block'; // Show tweet if it matches the keyword
+    } else {
+      tweet.style.display = 'none'; // Hide tweet if it doesn't match the keyword
+    }
+  }
+}
+
+</script>
+<button> <a href = "scholarshipspage1.html">1</a> </button>
+<button> <a href = "scholarshipspage2.html">2</a> </button>
+<button> <a href = "scholarshipspage3.html">3</a> </button>
+<button> <a href = "scholarshipspage4.html">4</a> </button>
+<button> <a href = "scholarshipspage5.html">5</a> </button>
+</body>
+</html>
+

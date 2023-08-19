@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Login</title>
+    
+    <style>
+    #detailsform{
+        margin-left:600px;
+        margin-right:600px;
+        margin-top: 50px;
+        border:solid;
+        padding:20px;
+    }
+    
+    </style>
+</head>
+<body style="background-color: rgb(112,207,114);">
+  <div id="detailsform">
+    <form id="signin">
+      
+        <h4>Contact number</h4>
+        <input type="number" name="number" placeholder="contact number">
+    
+    <div class="preferences">
+        <h4>Preferences</h4>
+        <input type="radio" name="pref" value = "university">
+        <label for="University">University</label>
+        <br>
+        <input type="radio" name="pref" value = "school">
+        <label for="School">School</label>
+    </div>
+    <div class="interest">
+        <h4>Interest</h4>
+        <input type="text" name="interest" placeholder="interest">
+    </div>
+    <br>
+    
+    <button>sign up</button>
+    <br>
+    <br>
+  </form>
+</div>
+    <script>
+      /*let params={} 
+      let regex=/([^%=]+)=([^&]*)/g, m
+      while(m=regex.exec(location.href)){
+        params[decodeURIComponent(m[1])]=decodeURIComponent(m[2])
+      }
+      if(Object.Keys(params).length>0){
+        localStorage.setItem('authInfo',JSON.stringify(params))
+      }
+window.history.pushState({},document.title,"/"+"profile.html")
+let info=JSON.parse(localStorage.getItem('authInfo'))
+console.log(info['acess_token'])
+console.log(info['expires_in'])
+console.log(JSON.parse(localStorage.getItem('authInfo')))*/
+    
+document.getElementById('signin').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        var preferences = document.getElementsByName('pref');
+        for (i = 0; i < preferences.length; i++) {
+          if (preferences[i].checked)
+          {var data = {preference: preferences[i].value}}
+        }
+        fetch('/detailsform', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(function(response) {
+  if (response.ok) {
+    // Sign-up successful
+    window.location.href = '/scholarshipspage5.html';
+  } else {
+    // Sign-up failed
+    console.log('Sign-up failed');
+  }
+})
+.catch(function(error) {
+  console.log('An error occurred:', error);
+});
+
+
+          });
+  </script>
+ 
+
+
+</body>
+</html>

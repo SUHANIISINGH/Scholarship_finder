@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        #alreadylogin{
+            margin-left:600px;
+            margin-right:600px;
+            margin-top: 50px;
+            border:solid;
+            padding:20px;
+        }
+        
+    </style>
+    
+</head>
+<body style="background-color: rgb(112,207,114);">
+  <div id="alreadylogin">
+    <form id = "loginForm">
+    <h4>Name/Email Id</h4>
+    <input type="text" name="name" id = "username">
+    
+    <h4>Password</h4>
+    <input type="password" name="password" id = "password">
+    <br><br>
+    <button id="login">login</button>
+</form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve form data
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Create the request payload
+      var data = {
+        username: username,
+        password: password
+      };
+
+      // Make an AJAX request to the backend API
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) {
+        if (response.ok) {
+          // Authentication successful
+          // Redirect to the desired page
+          window.location.href = '/scholarshipspage5.html';
+        } else {
+          // Authentication failed
+          console.log('Invalid username or password');
+        }
+      })
+      .catch(function(error) {
+        console.log('An error occurred:', error);
+      });
+    });
+  </script>
+</body>
+</html>

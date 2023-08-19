@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <style>
+        #loginForm{
+            margin-left:600px;
+            margin-right:600px;
+            margin-top: 50px;
+            border:solid;
+            padding:20px;
+        }
+        
+        </style>
+    
+    </head>
+    <body style="background-color: rgb(112,207,114);">
+      <h1></h1>
+      <div id="loginForm">
+    <form id = 'signupFormPage1' >
+        <h4>Name</h4>
+        <input type="text" name="name" >
+        <h4>Email Id</h4>
+        <input type="email" name="email" id = "username">
+        <h4>Password</h4>
+        <input type="password" name="password" id = "password">
+        <br><br>
+        <button >Sign up</button>
+   
+    </form>
+    <button id="login" onclick = login()>login</button>
+         <h3 style="margin-left: 50px;">          or</h3>
+        <button onclick="signIn()">Sign in with google</button>
+      </div>
+    <script> 
+    function login(){
+      window.location.href = '/loginpage.html'
+    }
+        function signIn(){
+   
+   
+   let oauth2Endpoint="https://accounts.google.com/o/oauth2/v2/auth"
+   let form=document.createElement('form')
+   form.setAttribute('method','GET')
+   form.setAttribute('action',oauth2Endpoint)
+   let params={
+       "client_id":"872474261012-3qv4v0uravlmqlu65veu1r1ii7f8pjhj.apps.googleusercontent.com",
+       "redirect_uri":"http://127.0.0.1:5500/detailsform.html",
+       "response_type":"token",
+       "scope":"https://www.googleapis.com/auth/userinfo.profile",
+       "include_granted_scopes":'true',
+       'state':'pass-through-value'
+   }
+   for(var p in params) {
+         let input =document.createElement('input');
+         input.setAttribute('type','hidden');
+         input.setAttribute('name',p);
+         input.setAttribute('value',params[p]);
+         form.appendChild(input);
+
+   }
+   document.body.appendChild(form);
+   form.submit();
+}
+      document.getElementById('signupFormPage1').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var data = {
+        username: username,
+        password: password
+      };
+        fetch('/googlesignin', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(function(response) {
+  if (response.ok) {
+    // Sign-up successful
+    window.location.href = '/detailsform.html';
+  } else {
+    // Sign-up failed
+    console.log('Sign-up failed');
+  }
+})
+.catch(function(error) {
+  console.log('An error occurred:', error);
+});
+
+
+          }); 
+    </script>   
+    </body>
+    
+      
+    
+    </html>

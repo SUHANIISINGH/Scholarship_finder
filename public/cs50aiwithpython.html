@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CS50 Android</title>
+ <style>
+   .thumbnail-container{
+    margin-top:100px;
+        display:flex;
+        max-width: 100%;
+    }
+   .thumbnail-container img {
+    
+      height: 360px;
+
+      border-radius: 10px;
+      transition: height 0.3s ease-in-out;
+    }
+
+    .thumbnail-container img:hover {
+      height: 380px;
+    }
+    .thumbnail{
+      border:6px solid white;
+      
+    }
+ </style>
+</head>
+<body onload="getThumbnail('course1', 'thumbnailImage1'),getThumbnail('course2', 'thumbnailImage2'),getThumbnail('course3', 'thumbnailImage3'),getThumbnail('course4', 'thumbnailImage4'),getThumbnail('course5', 'thumbnailImage5'),getThumbnail('course6', 'thumbnailImage6'),getThumbnail('course7', 'thumbnailImage7'),getThumbnail('course8', 'thumbnailImage8')">
+    <h2 style="text-align:center;font-family: sans-serif;font-size:50px;position:fixed;top:3px;">CS50-Introduction to Artificial Intelligence with Python</h2>
+  <section class="thumbnail-section">
+    
+    <div class="thumbnail-container">
+      <div class="thumbnail">
+      <p id="course1" style="color:white;">https://www.youtube.com/watch?v=gR8QvFmNuLE&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=1&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=gR8QvFmNuLE&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=1&pp=iAQB"><img id="thumbnailImage1" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Introduction</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course2" style="color:white;">https://www.youtube.com/watch?v=WbzNRTTrX0g&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=2&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=WbzNRTTrX0g&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=2&pp=iAQB"><img id="thumbnailImage2" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Search-Lecture 0</p>
+      </div>
+      <div class="thumbnail">
+
+      <p id="course3" style="color:white;">https://www.youtube.com/watch?v=D8RRq3TbtHU&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=4&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=D8RRq3TbtHU&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=4&pp=iAQB"><img id="thumbnailImage3" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Knowledge-Lecture 1</p>
+      </div>
+      <div class="thumbnail">
+
+      <p id="course4" style="color:white;">https://www.youtube.com/watch?v=qK46ET1xk2A&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=5&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=qK46ET1xk2A&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=5&pp=iAQB"><img id="thumbnailImage4" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Uncertainity-Lecture 2</p>
+      
+      </div>
+      <div class="thumbnail"><p id="course5" style="color:white;">https://www.youtube.com/watch?v=qK46ET1xk2A&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=5&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=qK46ET1xk2A&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=5&pp=iAQB"><img id="thumbnailImage5" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Optimization-Lecture 3</p>
+      </div>
+      <div class="thumbnail"><p id="course6" style="color:white;">https://www.youtube.com/watch?v=-g0iJjnO2_w&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=6&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=-g0iJjnO2_w&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=6&pp=iAQB"><img id="thumbnailImage6" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Learning-Lecture 4</p>
+      </div>
+      <div class="thumbnail"> <p id="course7" style="color:white;">https://www.youtube.com/watch?v=J1QD9hLDEDY&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=7&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=J1QD9hLDEDY&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=7&pp=iAQB"><img id="thumbnailImage7" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Neural Networks-Lecture 5</p>
+      
+      </div>
+      <div class="thumbnail"> <p id="course8" style="color:white;">https://www.youtube.com/watch?v=55tRetTTrdQ&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=8&pp=iAQB</p>
+        <a href="https://www.youtube.com/watch?v=55tRetTTrdQ&list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv&index=8&pp=iAQB"><img id="thumbnailImage8" src="" alt="Thumbnail" ></a>
+        <p style="font-family:sans-serif;">Language-Lecture 6</p>
+        
+        </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    function getThumbnail(id, id1) {
+      var youtubeLink = document.getElementById(id).textContent;
+      var videoId = extractVideoId(youtubeLink);
+
+      if (videoId) {
+        var thumbnailUrl = 'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg';
+        document.getElementById(id1).src = thumbnailUrl;
+      }
+    }
+
+    function extractVideoId(url) {
+      var match = url.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^?&]+)/i);
+      return match ? match[1] : null;
+    }
+  </script>
+</body>
+</html>

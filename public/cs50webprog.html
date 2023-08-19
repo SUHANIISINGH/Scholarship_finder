@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Courses Website</title>
+ <style>
+    .thumbnail-container{
+      margin-top:90px;
+        display:flex;
+        max-width: 100%;
+    }
+   .thumbnail-container img {
+    
+      height: 400px;
+
+      border-radius: 10px;
+      transition: height 0.3s ease-in-out;
+    }
+
+    .thumbnail-container img:hover {
+      height: 420px;
+    }
+    .thumbnail{
+      border:6px solid white;
+      
+    }
+ </style>
+</head>
+<body onload="getThumbnail('course1', 'thumbnailImage1'),getThumbnail('course2', 'thumbnailImage2'),getThumbnail('course3', 'thumbnailImage3'),getThumbnail('course4', 'thumbnailImage4'),getThumbnail('course5', 'thumbnailImage5'),getThumbnail('course6', 'thumbnailImage6'),getThumbnail('course7', 'thumbnailImage7'),getThumbnail('course8', 'thumbnailImage8'),getThumbnail('course9', 'thumbnailImage9'),getThumbnail('course10', 'thumbnailImage10')">
+  
+  <section class="thumbnail-section">
+    <h2 style="text-align:center;font-family: sans-serif;font-size:50px;position:fixed;top:3px;">CS50 Web Programming with Python and JavaScript</h2>
+    <div class="thumbnail-container">
+      <div class="thumbnail">
+      <p id="course1" style="color:white;">https://www.youtube.com/watch?v=Nn7EX3zkGUo&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=1&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=Nn7EX3zkGUo&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=1&pp=iAQB"><img id="thumbnailImage1" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">Introduction</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course2" style="color:white;">https://www.youtube.com/watch?v=zFZrkCIc2Oc&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=2&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=zFZrkCIc2Oc&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=2&pp=iAQB"><img id="thumbnailImage2" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 0 - HTML and CSS</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course3" style="color:white;">https://www.youtube.com/watch?v=NcoBAfJ6l2Q&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=3&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=NcoBAfJ6l2Q&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=3&pp=iAQB"><img id="thumbnailImage3" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 1 - Git</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course4" style="color:white;">https://www.youtube.com/watch?v=w8q0C-C1js4&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=5&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=w8q0C-C1js4&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=5&pp=iAQB"><img id="thumbnailImage4" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 3 - Django</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course5" style="color:white;">https://www.youtube.com/watch?v=YzP164YANAU&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=6&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=YzP164YANAU&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=6&pp=iAQB"><img id="thumbnailImage5" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 4 - SQL, Models and Migrations</p>
+      </div>
+      <div class="thumbnail">
+              <p id="course6" style="color:white;">https://www.youtube.com/watch?v=x5trGVMKTdY&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=7&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=x5trGVMKTdY&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=7&pp=iAQB"><img id="thumbnailImage6" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 5 - JavaScript</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course7" style="color:white;">https://www.youtube.com/watch?v=jrBhi8wbzPw&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=8&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=jrBhi8wbzPw&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=8&pp=iAQB"><img id="thumbnailImage7" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 6 - User Interfaces</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course8" style="color:white;">https://www.youtube.com/watch?v=WbRDkJ4lPdY&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=9&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=WbRDkJ4lPdY&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=9&pp=iAQB"><img id="thumbnailImage8" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 7 - Testing and CI/CD</p>
+      </div>
+      <div class="thumbnail">
+      <p id="course9" style="color:white;">https://www.youtube.com/watch?v=6PWTxRGh_dk&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=10&pp=iAQB</p>
+      <a href="https://www.youtube.com/watch?v=6PWTxRGh_dk&list=PLhQjrBD2T380xvFSUmToMMzERZ3qB5Ueu&index=10&pp=iAQB"><img id="thumbnailImage9" src="" alt="Thumbnail" ></a>
+      <p style="font-family:sans-serif;">CS50W - Lecture 8 - Scalability and Security</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your other HTML content -->
+
+  <script>
+    function getThumbnail(id, id1) {
+      var youtubeLink = document.getElementById(id).textContent;
+      var videoId = extractVideoId(youtubeLink);
+
+      if (videoId) {
+        var thumbnailUrl = 'https://img.youtube.com/vi/' + videoId + '/maxresdefault.jpg';
+        document.getElementById(id1).src = thumbnailUrl;
+      }
+    }
+
+    function extractVideoId(url) {
+      var match = url.match(/(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^?&]+)/i);
+      return match ? match[1] : null;
+    }
+  </script>
+</body>
+</html>
